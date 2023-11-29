@@ -19,13 +19,23 @@ class ParameterList:
                line = line.replace('= ','')
                self.list.append(line.split())
                
-        print(self.list,"\n")
+        #print(self.list,"\n")
         pass
     
     def set(self,parameter, value):
         for i, sublist in enumerate(self.list):
             if parameter in sublist:
                 self.list[i][1] = value
+        pass
+    
+    def applyTo(self, filepath):
+        entry = ""
+        for param in self.list:
+            entry = entry + param[0] + " = " + param[1] + "\n"
+            
+        with open(filepath, "w") as text_file:
+            text_file.write(entry)
+        print(entry)
         pass
 
 

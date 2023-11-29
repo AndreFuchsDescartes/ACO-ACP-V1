@@ -11,6 +11,7 @@ def updateParameterValues(filepath):
     parameters.parse(filepath)
     
 def applyParameterValues():
+    parameters.applyTo(filepath)
     pass
  
 ## Read from File
@@ -21,8 +22,8 @@ updateParameterValues(filepath)
 
 
 # Edit Values of Variables based on File
-parameters.set('DamageInSandstorm','0')
-print(parameters.list)
+parameters.set('PlayableCharacterIndex','2')
+
 
 # Apply Changes
 applyParameterValues()
